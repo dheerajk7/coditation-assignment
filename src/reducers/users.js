@@ -1,6 +1,5 @@
 import { UPDATE_USER_LIST, SET_USER_DETAIL } from '../actions/actionTypes';
 
-// component reducer initial state to render menu component on loading IPOD
 const initialState = {
   userList: [],
   activeUser: {},

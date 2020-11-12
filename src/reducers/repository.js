@@ -7,6 +7,7 @@ const initialState = {
 
 export default function repository(state = initialState, action) {
   switch (action.type) {
+    // setting repository detail in store
     case SET_REPO_DETAIL: {
       return {
         ...state,

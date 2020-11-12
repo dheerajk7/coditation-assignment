@@ -1,5 +1,3 @@
-//api.github.com/search/users?q=dhe+in:user&per_page=100
-
 // base url of API
 const API_ROOT = 'https://api.github.com';
 

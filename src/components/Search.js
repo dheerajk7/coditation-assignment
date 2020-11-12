@@ -5,8 +5,10 @@ import { connect } from 'react-redux';
 import { searchUser } from '../actions/users';
 
 function Search(props) {
+  // using state to manage input's value
   const [searchInput, setSearchInput] = useState('');
 
+  // handling click button on search and pressing Enter button
   function handleButtonClick() {
     if (searchInput.length === 0) {
       showAlert('Invalid', 'Search Input is Empty', 'warning');
@@ -35,6 +37,8 @@ function Search(props) {
   );
 }
 
+// passing store info as props to component
+// mainly to use dispatch inside component
 function mapStateToProps(state) {
   return {};
 }

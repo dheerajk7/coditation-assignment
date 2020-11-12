@@ -6,6 +6,7 @@ import '../styles/User.css';
 import { loadingStop } from '../actions/progress';
 
 function User(props) {
+  // getting user Detail from API based on username received in props
   useEffect(() => {
     props.dispatch(searchUserDetail(props.match.params.username));
     return () => {
@@ -67,6 +68,7 @@ function User(props) {
   );
 }
 
+// passing store info as props to component
 function mapStateToProps(state) {
   return {
     userDetail: state.users.activeUser,

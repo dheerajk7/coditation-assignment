@@ -7,6 +7,8 @@ import { connect } from 'react-redux';
 import { loadingStop } from '../actions/progress';
 
 function Repo(props) {
+  // getting repository detail from API and storing it in redux store
+  // getting on the basis of username and repoName received in props
   useEffect(() => {
     console.log(props.match.params);
     props.dispatch(
@@ -15,6 +17,7 @@ function Repo(props) {
         props.match.params.repositoryName
       )
     );
+    // function to clear redux store on unmounting these component
     return () => {
       props.dispatch(clearRepoDetail());
       props.dispatch(loadingStop());
@@ -83,6 +86,7 @@ function Repo(props) {
   );
 }
 
+// passing store info as props to component
 function mapStateToProps(state) {
   return {
     repoDetail: state.repository.activeRepo,

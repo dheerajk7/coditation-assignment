@@ -2,6 +2,7 @@ import { UPDATE_USER_LIST, SET_USER_DETAIL } from '../actions/actionTypes';
 import { APIUrls } from '../helpers/urls';
 import { loadingStart, loadingStop } from '../actions/progress';
 
+// action creator for updating userlist in redux store
 function updateUserList(userList) {
   return {
     type: UPDATE_USER_LIST,
@@ -9,6 +10,7 @@ function updateUserList(userList) {
   };
 }
 
+// action creator for searching user from API
 export function searchUser(pattern) {
   return async (dispatch) => {
     dispatch(loadingStart());
@@ -24,6 +26,7 @@ export function searchUser(pattern) {
   };
 }
 
+// action creator for updating userDetail and repository list in redux store
 function setUserDetail(userDetail, repoList) {
   return {
     type: SET_USER_DETAIL,
@@ -32,6 +35,7 @@ function setUserDetail(userDetail, repoList) {
   };
 }
 
+// action creator for clearnign userDetail and repolist on unmounting user component
 export function clearUserDetail() {
   return {
     type: SET_USER_DETAIL,
@@ -40,6 +44,7 @@ export function clearUserDetail() {
   };
 }
 
+// action creator for searching user detail from API
 export function searchUserDetail(username) {
   return async (dispatch) => {
     dispatch(loadingStart());
