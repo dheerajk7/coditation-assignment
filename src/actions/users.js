@@ -1,5 +1,6 @@
 import { UPDATE_USER_LIST, SET_USER_DETAIL } from '../actions/actionTypes';
 import { APIUrls } from '../helpers/urls';
+import { loadingStart, loadingStop } from '../actions/progress';
 
 function updateUserList(userList) {
   return {
@@ -10,6 +11,7 @@ function updateUserList(userList) {
 
 export function searchUser(pattern) {
   return async (dispatch) => {
+    dispatch(loadingStart());
     const url = APIUrls.searchUser(pattern);
     fetch(url, {
       method: 'GET',
@@ -17,6 +19,7 @@ export function searchUser(pattern) {
       .then((response) => response.json())
       .then((data) => {
         dispatch(updateUserList(data.items));
+        dispatch(loadingStop());
       });
   };
 }
@@ -39,6 +42,7 @@ export function clearUserDetail() {
 
 export function searchUserDetail(username) {
   return async (dispatch) => {
+    dispatch(loadingStart());
     const url = APIUrls.searchUserDetail(username);
     let userData = await fetch(url, {
       method: 'GET',
@@ -47,5 +51,6 @@ export function searchUserDetail(username) {
       method: 'GET',
     }).then((response) => response.json());
     dispatch(setUserDetail(userData, repoList));
+    dispatch(loadingStop());
   };
 }

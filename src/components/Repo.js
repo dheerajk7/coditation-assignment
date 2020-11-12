@@ -4,6 +4,7 @@ import '../styles/User.css';
 import '../styles/Repo.css';
 import { searchRepoDetail, clearRepoDetail } from '../actions/repo';
 import { connect } from 'react-redux';
+import { loadingStop } from '../actions/progress';
 
 function Repo(props) {
   useEffect(() => {
@@ -16,6 +17,7 @@ function Repo(props) {
     );
     return () => {
       props.dispatch(clearRepoDetail());
+      props.dispatch(loadingStop());
     };
   }, []);
 
@@ -69,8 +71,10 @@ function Repo(props) {
         {commitsList.map((commit) => {
           return (
             <li className="commit-item" key={commit.node_id}>
-              <span>{commit.commit.message}</span>
-              <span>{commit.commit.committer.date.substring(0, 10)}</span>
+              <span style={{ width: '65%' }}>{commit.commit.message}</span>
+              <span style={{ width: '25%' }}>
+                {commit.commit.committer.date.substring(0, 10)}
+              </span>
             </li>
           );
         })}

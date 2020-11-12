@@ -3,12 +3,14 @@ import { connect } from 'react-redux';
 import { searchUserDetail, clearUserDetail } from '../actions/users';
 import { Link } from 'react-router-dom';
 import '../styles/User.css';
+import { loadingStop } from '../actions/progress';
 
 function User(props) {
   useEffect(() => {
     props.dispatch(searchUserDetail(props.match.params.username));
     return () => {
       props.dispatch(clearUserDetail());
+      props.dispatch(loadingStop());
     };
   }, []);
 
