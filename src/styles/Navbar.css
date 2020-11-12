@@ -1,0 +1,10 @@
+.navbar-container {
+  height: 55px;
+  background-image: linear-gradient(to right, #040d57, #001666, #0a259d);
+  color: white;
+  font-weight: bold;
+  font-size: 1.9rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

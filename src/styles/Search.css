@@ -1,0 +1,28 @@
+.search {
+  margin: 1%;
+  display: flex;
+}
+
+.search > input {
+  width: 80%;
+  height: 26px;
+  font-size: 1.2rem;
+  color: navy;
+  border: 2px solid navy;
+  border-collapse: collapse;
+}
+
+.search > input :hover {
+  outline: none;
+}
+
+.search > button {
+  width: 20%;
+  border: none;
+  background-image: linear-gradient(to right, #040d57, #001666, #0a259d);
+  border-collapse: collapse;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
