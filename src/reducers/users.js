@@ -1,22 +1,27 @@
-import {} from '../actions/actionTypes';
+import { UPDATE_USER_LIST, SET_USER_DETAIL } from '../actions/actionTypes';
 
 // component reducer initial state to render menu component on loading IPOD
 const initialState = {
   userList: [],
   activeUser: {},
+  activeUserRepoList: [],
 };
 
 export default function users(state = initialState, action) {
   switch (action.type) {
-    // case CHANGE_COMPONENT: {
-    //   // if we are changing active component to menu then we need to change active item to coverflow
-    //   if (action.component === 'Menu') {
-    //     return {
-    //       ...state,
-    //       activeComponent: action.component,
-    //       activeItem: 'Coverflow',
-    //     };
-    // }
+    case UPDATE_USER_LIST: {
+      return {
+        ...state,
+        userList: action.userList,
+      };
+    }
+    case SET_USER_DETAIL: {
+      return {
+        ...state,
+        activeUser: action.userDetail,
+        activeUserRepoList: action.repoList,
+      };
+    }
     default: {
       return state;
     }

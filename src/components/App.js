@@ -14,8 +14,12 @@ class App extends Component {
           <Navbar />
           <Switch>
             <Route exact path="/" component={Home}></Route>
-            <Route exact path="/user" component={User}></Route>
-            <Route exact path="/repository" component={Repo}></Route>
+            <Route exact path="/user/:username" component={User}></Route>
+            <Route
+              exact
+              path="/:username/repository/:repositoryName"
+              component={Repo}
+            ></Route>
           </Switch>
         </div>
       </Router>

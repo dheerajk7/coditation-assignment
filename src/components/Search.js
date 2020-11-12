@@ -13,7 +13,6 @@ function Search(props) {
       return;
     }
     props.dispatch(searchUser(searchInput));
-    console.log(props, props.dispatch, 'searcInput');
   }
 
   return (
@@ -22,6 +21,11 @@ function Search(props) {
         placeholder="Search"
         onChange={(e) => {
           setSearchInput(e.target.value);
+        }}
+        onKeyUp={(e) => {
+          if (e.key === 'Enter') {
+            handleButtonClick();
+          }
         }}
       ></input>
       <button onClick={handleButtonClick}>

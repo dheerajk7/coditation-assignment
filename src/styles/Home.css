@@ -1,0 +1,71 @@
+.user-list {
+  list-style: none;
+  margin: 1%;
+  padding: 0px;
+  height: 80vh;
+  overflow-y: scroll;
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar on chrome */
+.user-list::-webkit-scrollbar {
+  display: none;
+}
+
+.user-list > li {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0% 2%;
+  margin: 1% 0%;
+  border-bottom: 3px solid #b0c4de40;
+  border-radius: 8px;
+}
+
+.user-list > li > img {
+  height: 67px;
+  width: 15%;
+  border-radius: 5px;
+  border: 2px solid #77889982;
+}
+.user-list > li > div {
+  width: 80%;
+  text-align: left;
+  padding: 1% 3%;
+}
+
+.user-list > li button {
+  font-family: 'Varela Round', sans-serif;
+  padding: 0.3% 2.5%;
+  color: white;
+  border-radius: 6px;
+  background-image: linear-gradient(to right, #10ab4f, #0b8c3df5);
+  border: 2px solid #2aff2a85;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.user-list > li button:active {
+  border: 2px solid #322c3dc4;
+}
+
+.user-list > li button:focus {
+  outline: none;
+}
+
+.user-list > li > div h2 {
+  color: navy;
+  margin: 5% 0%;
+  cursor: pointer;
+}
+
+.user-list > li > div h2:hover {
+  text-decoration: underline;
+}
+
+.user-list > li > div > h5 {
+  margin-top: -4%;
+  color: #808080f0;
+}
