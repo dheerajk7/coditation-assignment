@@ -1,12 +1,19 @@
 import '../styles/Search.css';
 import React, { useState } from 'react';
-import showAlert from '../helpers/alert';
+import { showAlert } from '../helpers/alerts';
+import { connect } from 'react-redux';
+import { searchUser } from '../actions/users';
 
 function Search(props) {
   const [searchInput, setSearchInput] = useState('');
 
   function handleButtonClick() {
-    console.log(searchInput, 'searcInput');
+    if (searchInput.length === 0) {
+      showAlert('Invalid', 'Search Input is Empty', 'warning');
+      return;
+    }
+    props.dispatch(searchUser(searchInput));
+    console.log(props, props.dispatch, 'searcInput');
   }
 
   return (
@@ -24,4 +31,8 @@ function Search(props) {
   );
 }
 
-export default Search;
+function mapStateToProps(state) {
+  return {};
+}
+
+export default connect(mapStateToProps)(Search);
