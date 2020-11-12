@@ -8,4 +8,8 @@ export const APIUrls = {
   searchUser: (pattern) =>
     `${API_ROOT}/search/users?q=${pattern}+in:user&per_page=100`,
   searchUserDetail: (username) => `${API_ROOT}/users/${username}`,
+  searchRepoDetail: (username, repoName) =>
+    `${API_ROOT}/repos/${username}/${repoName}`,
+  commitsUrl: (username, repoName) =>
+    `${API_ROOT}/repos/${username}/${repoName}/commits`,
 };

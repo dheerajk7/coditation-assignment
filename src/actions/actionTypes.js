@@ -1,2 +1,3 @@
 export const UPDATE_USER_LIST = 'UPDATE_USER_LIST';
 export const SET_USER_DETAIL = 'SET_USER_DETAIL';
+export const SET_REPO_DETAIL = 'SET_REPO_DETAIL';

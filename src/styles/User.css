@@ -1,0 +1,97 @@
+.user-detail-container {
+}
+
+.user-detail-container span {
+  text-align: justify;
+  display: block;
+}
+
+.upper-container {
+  display: flex;
+  height: 300px;
+  align-items: center;
+  border: 0.5px solid grey;
+  border-collapse: collapse;
+  padding: 1%;
+  text-align: center !important;
+}
+
+.image-container {
+  width: 50%;
+  border-right: 2px solid grey;
+}
+
+.image-container > img {
+  width: 60%;
+  height: 60%;
+  width: 60%;
+  height: 60%;
+  border-radius: 37px;
+  box-shadow: 0px 0px 4px 1px darkgrey;
+}
+
+.user-info-detail-container {
+  margin-left: 30px;
+}
+
+.user-bio {
+  border: 0.5px solid grey;
+  border-collapse: collapse;
+  padding: 1%;
+}
+.follower-detail-container {
+  display: flex;
+  justify-content: space-between;
+  border: 0.5px solid grey;
+  border-collapse: collapse;
+  padding: 1%;
+}
+
+.heading-text {
+  color: gray;
+}
+
+.github-link {
+  color: navy;
+}
+
+.github-link :hover {
+  text-decoration: underline;
+}
+
+.repo-list {
+  text-align: left;
+  list-style: none;
+  border: 0.5px solid grey;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0px;
+}
+
+.repo-heading {
+  font-size: 1.6rem;
+  padding: 2% 0%;
+  text-align: center;
+  padding-left: 1%;
+}
+
+.repo-list li {
+  color: navy;
+  font-size: 1.2rem;
+  padding-left: 1%;
+  text-align: center;
+  padding: 10px 15px;
+}
+
+.repo-list a:hover {
+  text-decoration: underline;
+}
+
+.repo-list li:nth-child(even) {
+  background-color: #d3d3d35e;
+}
+
+.username {
+  font-size: 1.6rem;
+  font-weight: bold;
+}

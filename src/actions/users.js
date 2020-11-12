@@ -29,6 +29,14 @@ function setUserDetail(userDetail, repoList) {
   };
 }
 
+export function clearUserDetail() {
+  return {
+    type: SET_USER_DETAIL,
+    userDetail: {},
+    repoList: [],
+  };
+}
+
 export function searchUserDetail(username) {
   return async (dispatch) => {
     const url = APIUrls.searchUserDetail(username);
